@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        .card-container{
-            display: flex;
-            gap: 10px;
-        }
+      .card-container {
+        display: flex;
+        gap: 10px;
+      }
       .card {
         /* Add shadows to create the "card" effect */
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -26,46 +26,59 @@
       .container {
         padding: 2px 16px;
       }
-      button{
+      button {
         padding: 5px 10px;
         color: white;
         font-weight: bold;
-        border:none;
+        border: none;
         background-color: rgb(193, 213, 62);
       }
     </style>
   </head>
   <body>
     <section class="card-container">
-        <div class="card">
-            <img src="./assets/img_avatar.png" alt="Avatar" style="width: 100%" />
-            <div class="container">
-              <h4><b>Abdullah</b></h4>
-              <p id="designation">Architect</p>
-              <button class="get-name-btn">Get Name</button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="./assets/img_avatar.png" alt="Avatar" style="width: 100%" />
-            <div class="container">
-              <h4><b>Hasan</b></h4>
-              <p>Software Engineer</p>
-              <button class="get-name-btn">Get Name</button>
-            </div>
-          </div>
+      <div class="card">
+        <img src="./assets/img_avatar.png" alt="Avatar" style="width: 100%" />
+        <div class="container">
+          <h4><b>Abdullah</b></h4>
+          <p id="designation">Architect</p>
+          <button class="get-name-btn">Get Name</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./assets/img_avatar.png" alt="Avatar" style="width: 100%" />
+        <div class="container">
+          <h4><b>Hasan</b></h4>
+          <p>Software Engineer</p>
+          <button class="get-name-btn">Get Name</button>
+        </div>
+      </div>
+
+      <div id="div-01">Here is div-01</div>
+      <div id="div-02">Here is div-02</div>
+      <div id="div-03">Here is div-03</div>
+
+      <ul>
+        <!-- -Name 1
+        -Name 2 -->
+        <!-- append the names -->
+        <li>Hasan</li>
+        <li>Abdullah</li>
+      </ul>
     </section>
     <script>
-        const buttons = document.getElementsByClassName('get-name-btn');
-        // console.log(buttons);
-        for (const button of buttons) {
-            button.addEventListener('click', getName)
-        }
-        function getName(e){
-            
-            const parentNode = e.target.parentNode
-            console.log(parentNode);
+      const element = document.getElementById('div-02');
+      element.remove(); // Removes the div with the 'div-02' id
 
-        }
+      const buttons = document.getElementsByClassName("get-name-btn");
+      console.log(buttons);
+      for (const button of buttons) {
+        button.addEventListener("click", getName);
+      }
+      function getName(e) {
+        const parentNode = e.target.parentNode.parentNode;
+        parentNode.remove();
+      }
     </script>
   </body>
 </html>
